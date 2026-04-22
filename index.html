@@ -1,0 +1,171 @@
+
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!--Makes the layout responsive on different screen sizes -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bookify Me</title>
+
+  <!-- Import fonts used in the design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page-shell">
+
+    <!-- Top navigation bar with logo, links, and surprise button -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-icon">📖</span>
+        <span class="brand-text">BOOKIFY ME</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#generator">Discover</a>
+        <a href="#how-it-works">How It Works</a>
+      </nav>
+
+      <button id="surpriseBtn" class="nav-cta">Surprise Me ✦</button>
+    </header>
+
+    <main>
+
+      <!-- Main hero section that introduces the idea and contains the generator form -->
+      <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <p class="eyebrow">A dreamy book experience</p>
+          <h1>What If <span>You Were a Book?</span></h1>
+
+          <p class="hero-subtext">
+            Enter your name or a word that describes you, choose your vibe,
+            and discover the book that matches your personality.
+          </p>
+
+          <!-- User input form to collect keyword and vibe -->
+          <section class="generator-card" id="generator">
+            <div class="form-grid single-vibe-grid">
+
+              <div class="field field-large">
+                <label for="keyword">Your Name / Word</label>
+                <input
+                  type="text"
+                  id="keyword"
+                  placeholder="Try: Noor, dreamy, fearless, soft..."
+                  maxlength="40"
+                />
+              </div>
+
+              <div class="field">
+                <label for="vibe">Choose Your Vibe</label>
+                <select id="vibe">
+                  <option value="">Select vibe</option>
+                  <option value="dreamy">Dreamy</option>
+                  <option value="bold">Bold</option>
+                  <option value="romantic">Romantic</option>
+                  <option value="dark">Dark</option>
+                  <option value="calm">Calm</option>
+                  <option value="chaotic">Chaotic</option>
+                  <option value="hopeful">Hopeful</option>
+                  <option value="mysterious">Mysterious</option>
+                  <option value="fantasy">Fantasy</option>
+                  <option value="poetry">Poetry</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="horror">Horror</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Buttons trigger JavaScript actions (generate / clear) -->
+            <div class="action-row">
+              <button id="generateBtn" class="primary-btn">Find My Book ✦</button>
+              <button id="clearBtn" class="secondary-btn">Clear</button>
+            </div>
+
+            <!-- Displays messages (errors or success feedback) -->
+            <p id="messageBox" class="message-box"></p>
+          </section>
+
+          <!-- Static feature highlights -->
+          <div class="feature-strip">
+            <div class="feature-item">
+              <span>📚</span>
+              <div>
+                <strong>Book Search</strong>
+                <p>Find titles that match your vibe</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span>💬</span>
+              <div>
+                <strong>Quotes</strong>
+                <p>Random quote for your persona</p>
+              </div>
+            </div>
+
+            <div class="feature-item">
+              <span>🎨</span>
+              <div>
+                <strong>Cover Style</strong>
+                <p>Generated from your vibe</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dynamic results from API will be inserted here -->
+      <section class="results-section">
+        <div id="resultsContainer" class="results-container"></div>
+      </section>
+
+      <!-- Simple explanation of how the app works -->
+      <section class="how-it-works" id="how-it-works">
+        <h2>How It Works</h2>
+
+        <div class="steps">
+          <article class="step-card">
+            <span>1</span>
+            <h3>Describe Yourself</h3>
+            <p>Type your name or a word that fits your personality.</p>
+          </article>
+
+          <article class="step-card">
+            <span>2</span>
+            <h3>Choose Your Vibe</h3>
+            <p>Select the style or emotional tone that matches you best.</p>
+          </article>
+
+          <article class="step-card">
+            <span>3</span>
+            <h3>Generate Your Book</h3>
+            <p>Your personalized book card appears instantly without page refresh.</p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JavaScript logic file -->
+  <script src="script.js"></script>
+</body>
+</html>
